@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://clbahe51c7lxa"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 562.0
+offset_right = 107.0
+offset_bottom = 593.0
+text = "Fight"
+
+[node name="MenuButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 561.0
+offset_right = 206.0
+offset_bottom = 592.0
+text = "Fight"
+item_count = 2
+popup/item_0/text = "Vertical Slash"
+popup/item_1/text = "Horizontal Slash"
+popup/item_1/id = 1

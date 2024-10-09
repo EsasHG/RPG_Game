@@ -1,0 +1,270 @@
+[gd_scene load_steps=17 format=3 uid="uid://bhkuiqgtholfh"]
+
+[ext_resource type="Script" path="res://Scripts/BattleManager.gd" id="1_6wkod"]
+[ext_resource type="StyleBox" uid="uid://eifkmcsfdpul" path="res://Assets/StyleBoxes/ButtonStyleBoxFlat.tres" id="1_jrjqu"]
+[ext_resource type="Script" path="res://Scenes/UI_Manager.gd" id="1_k7dv8"]
+[ext_resource type="PackedScene" uid="uid://cjwhdp6upjo1d" path="res://Scenes/Encounters/encounter.tscn" id="3_fg7kr"]
+[ext_resource type="PackedScene" uid="uid://blemjr8j4mqwh" path="res://Scenes/Encounters/encounter2.tscn" id="4_ccc8v"]
+[ext_resource type="Script" path="res://Scripts/player_character.gd" id="4_fw2j7"]
+[ext_resource type="PackedScene" uid="uid://tnu6445agx5l" path="res://Scenes/Encounters/encounter3.tscn" id="5_7jwm6"]
+[ext_resource type="Resource" uid="uid://opmhxhn32pvc" path="res://Assets/Attacks/Bomb.tres" id="6_dag4l"]
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="6_hs7mh"]
+[ext_resource type="Resource" uid="uid://bju0l5qw7np4w" path="res://Assets/Attacks/HorizontalSlash.tres" id="7_umd5w"]
+[ext_resource type="Resource" uid="uid://c81rb6h2i0uf3" path="res://Assets/Attacks/VerticalSlash.tres" id="8_qei0o"]
+[ext_resource type="Resource" uid="uid://dkux6b5488hte" path="res://Assets/Attacks/DiagonalSlash.tres" id="9_l320r"]
+
+[sub_resource type="Theme" id="Theme_b01rc"]
+PanelContainer/styles/PanelStyleBox = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5gm8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjf7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4igk"]
+size = Vector2(1918, 870.75)
+
+[node name="Main" type="Node"]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k7dv8")
+
+[node name="PanelContainer" type="PanelContainer" parent="GUI"]
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -867.0
+offset_top = -206.0
+offset_right = -513.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_b01rc")
+
+[node name="BattleSelction" type="VBoxContainer" parent="GUI/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="MenuButton" type="MenuButton" parent="GUI/PanelContainer/BattleSelction"]
+visible = false
+layout_mode = 2
+focus_mode = 2
+theme_override_styles/focus = ExtResource("1_jrjqu")
+theme_override_styles/disabled_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/disabled = ExtResource("1_jrjqu")
+theme_override_styles/hover_pressed_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/hover_pressed = ExtResource("1_jrjqu")
+theme_override_styles/hover_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/hover = ExtResource("1_jrjqu")
+theme_override_styles/pressed_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/pressed = ExtResource("1_jrjqu")
+theme_override_styles/normal_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/normal = ExtResource("1_jrjqu")
+text = "Fight"
+item_count = 2
+popup/item_0/text = "Vertical Slash"
+popup/item_1/text = "Horizontal Slash"
+popup/item_1/id = 1
+
+[node name="ItemButton" type="MenuButton" parent="GUI/PanelContainer/BattleSelction"]
+visible = false
+layout_mode = 2
+theme_override_styles/focus = ExtResource("1_jrjqu")
+theme_override_styles/disabled_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/disabled = ExtResource("1_jrjqu")
+theme_override_styles/hover_pressed_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/hover_pressed = ExtResource("1_jrjqu")
+theme_override_styles/hover_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/hover = ExtResource("1_jrjqu")
+theme_override_styles/pressed_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/pressed = ExtResource("1_jrjqu")
+theme_override_styles/normal_mirrored = ExtResource("1_jrjqu")
+theme_override_styles/normal = ExtResource("1_jrjqu")
+text = "Items"
+item_count = 2
+popup/item_0/text = "Vertical Slash"
+popup/item_1/text = "Horizontal Slash"
+popup/item_1/id = 1
+
+[node name="Fight" type="Button" parent="GUI/PanelContainer/BattleSelction"]
+layout_mode = 2
+text = "Fight"
+
+[node name="Button" type="Button" parent="GUI/PanelContainer/BattleSelction"]
+layout_mode = 2
+text = "Escape"
+
+[node name="Button2" type="Button" parent="GUI/PanelContainer/BattleSelction"]
+layout_mode = 2
+text = "Items"
+
+[node name="PanelContainer2" type="PanelContainer" parent="GUI"]
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -412.0
+offset_top = -207.0
+offset_right = 582.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_b01rc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/PanelContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GUI/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="GUI/PanelContainer2/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Karl"
+
+[node name="CharacterHealth" type="Label" parent="GUI/PanelContainer2/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "HP: 10/10"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GUI/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="GUI/PanelContainer2/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Karl"
+
+[node name="CharacterHealth" type="Label" parent="GUI/PanelContainer2/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "HP: 10/10"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="GUI/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="GUI/PanelContainer2/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Karl"
+
+[node name="CharacterHealth" type="Label" parent="GUI/PanelContainer2/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "HP: 10/10"
+
+[node name="PanelContainer3" type="PanelContainer" parent="GUI"]
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -867.0
+offset_top = -275.0
+offset_right = -513.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_b01rc")
+
+[node name="TurnLabel" type="Label" parent="GUI/PanelContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Somebody's turn"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PanelContainer4" type="PanelContainer" parent="GUI"]
+visible = false
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -439.0
+offset_right = 193.0
+offset_bottom = -374.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_b01rc")
+
+[node name="AttackList" type="VBoxContainer" parent="GUI/PanelContainer4"]
+layout_mode = 2
+
+[node name="World" type="Node2D" parent="."]
+script = ExtResource("1_6wkod")
+encounters = Array[PackedScene]([ExtResource("5_7jwm6"), ExtResource("3_fg7kr"), ExtResource("4_ccc8v")])
+bomb = ExtResource("6_dag4l")
+
+[node name="Bill" type="Area2D" parent="World" node_paths=PackedStringArray("infoContainer") groups=["PlayerCharacters"]]
+position = Vector2(608, 840)
+scale = Vector2(3, 6)
+script = ExtResource("4_fw2j7")
+infoContainer = NodePath("../../GUI/PanelContainer2/HBoxContainer/VBoxContainer2")
+attacks = Array[ExtResource("6_hs7mh")]([ExtResource("7_umd5w"), ExtResource("8_qei0o")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Bill"]
+shape = SubResource("RectangleShape2D_f5gm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Bill"]
+modulate = Color(0.511307, 0.604537, 0.262074, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_hjf7s")
+
+[node name="James" type="Area2D" parent="World" node_paths=PackedStringArray("infoContainer") groups=["PlayerCharacters"]]
+position = Vector2(965, 840)
+scale = Vector2(3, 6)
+script = ExtResource("4_fw2j7")
+infoContainer = NodePath("../../GUI/PanelContainer2/HBoxContainer/VBoxContainer3")
+attacks = Array[ExtResource("6_hs7mh")]([ExtResource("8_qei0o")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/James"]
+shape = SubResource("RectangleShape2D_f5gm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/James"]
+modulate = Color(0.511307, 0.604537, 0.262074, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_hjf7s")
+
+[node name="Proton" type="Area2D" parent="World" node_paths=PackedStringArray("infoContainer") groups=["PlayerCharacters"]]
+position = Vector2(1284, 840)
+scale = Vector2(3, 6)
+script = ExtResource("4_fw2j7")
+infoContainer = NodePath("../../GUI/PanelContainer2/HBoxContainer/VBoxContainer4")
+attacks = Array[ExtResource("6_hs7mh")]([ExtResource("9_l320r")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Proton"]
+shape = SubResource("RectangleShape2D_f5gm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Proton"]
+modulate = Color(0.511307, 0.604537, 0.262074, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_hjf7s")
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+anchor_mode = 0
+
+[node name="BattleArea" type="Area2D" parent="World"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BattleArea"]
+position = Vector2(960, 437.625)
+shape = SubResource("RectangleShape2D_m4igk")
+
+[connection signal="attack_selected" from="GUI" to="World" method="_on_attack_selected3"]
+[connection signal="pressed" from="GUI/PanelContainer/BattleSelction/Fight" to="GUI" method="_on_fight_pressed"]
+[connection signal="player_changed" from="World" to="GUI" method="_on_player_changed"]

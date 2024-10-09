@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=3 format=3 uid="uid://bju0l5qw7np4w"]
+
+[ext_resource type="PackedScene" uid="uid://drvgivunmnffw" path="res://Scenes/Attacks/HorizontalSlash.tscn" id="1_24s4r"]
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="1_coviu"]
+
+[resource]
+script = ExtResource("1_coviu")
+name = "Horizontal Slash"
+scene = ExtResource("1_24s4r")

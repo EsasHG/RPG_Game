@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=3 format=3 uid="uid://opmhxhn32pvc"]
+
+[ext_resource type="PackedScene" uid="uid://ca4er3amk6bp4" path="res://Scenes/Attacks/Bomb.tscn" id="1_87q2s"]
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="2_menj8"]
+
+[resource]
+script = ExtResource("2_menj8")
+name = "Bomb"
+scene = ExtResource("1_87q2s")
