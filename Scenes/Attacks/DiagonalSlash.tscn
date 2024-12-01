@@ -2,21 +2,23 @@
 
 [ext_resource type="Script" path="res://Scripts/DiagonalSlash.gd" id="1_kf6jw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5gm8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iwd0"]
+size = Vector2(2156.68, 36.1629)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hjf7s"]
 
 [node name="DamageEffect" type="Area2D"]
-rotation = -0.785398
-scale = Vector2(150, 3)
+position = Vector2(300, -300)
 script = ExtResource("1_kf6jw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_f5gm8")
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_1iwd0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.556863)
-scale = Vector2(20, 20)
+rotation = -0.785398
+scale = Vector2(2150, 35)
 texture = SubResource("CanvasTexture_hjf7s")
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

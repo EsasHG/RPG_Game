@@ -1,11 +1,17 @@
 extends Area2D
 
+class_name Enemy
 var projectile = preload("res://Scenes/projectile.tscn")
 @export var health = 1
 var hitCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	if(has_node("ProgressBar")):
+		$ProgressBar.max_value = health
+		$ProgressBar.value = health
+	
 	add_to_group("Enemies")
 	pass # Replace with function body.
 
@@ -25,6 +31,10 @@ func damage(dmg : int):
 		dmg*= 5*hitCount
 		
 	health-= dmg
+	
+	if($ProgressBar):
+		$ProgressBar.value = health
+	
 	
 	if(health <= 0):
 		var tween = get_tree().create_tween()

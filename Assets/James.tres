@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://bxa8eshwatu3x"]
+
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="1_uia0n"]
+[ext_resource type="Resource" uid="uid://c81rb6h2i0uf3" path="res://Assets/Attacks/VerticalSlash.tres" id="2_ms186"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="3_6fd2u"]
+[ext_resource type="Resource" uid="uid://de15hum374xxl" path="res://Assets/Attacks/RotatingSlash.tres" id="3_s8y48"]
+
+[resource]
+script = ExtResource("3_6fd2u")
+name = "James"
+max_health = 10
+current_health = 10
+attacks = Array[ExtResource("1_uia0n")]([ExtResource("2_ms186"), ExtResource("3_s8y48")])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_qtmye"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5gm8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l87wh"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hjf7s"]
 
@@ -10,7 +10,7 @@
 script = ExtResource("1_qtmye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_f5gm8")
+shape = SubResource("RectangleShape2D_l87wh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.211765, 0.109804, 1)

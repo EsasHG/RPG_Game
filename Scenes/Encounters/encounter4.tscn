@@ -1,20 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://bq7tc1ocifhhi"]
 
-[ext_resource type="PackedScene" uid="uid://ccdvv4rppbb5e" path="res://Scenes/enemy.tscn" id="1_4p564"]
+[ext_resource type="PackedScene" uid="uid://xfrjl41ip7vn" path="res://Scenes/bigEnemy.tscn" id="1_5tlcb"]
 
 [node name="Encounter" type="Node2D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_4p564")]
+[node name="BigEnemy" parent="." instance=ExtResource("1_5tlcb")]
 position = Vector2(989, 407)
-scale = Vector2(5, 5)
-health = 11
 
-[node name="Enemy2" parent="." instance=ExtResource("1_4p564")]
+[node name="BigEnemy2" parent="." instance=ExtResource("1_5tlcb")]
 position = Vector2(989, 148)
-scale = Vector2(5, 5)
-health = 11
 
-[node name="Enemy3" parent="." instance=ExtResource("1_4p564")]
+[node name="BigEnemy3" parent="." instance=ExtResource("1_5tlcb")]
 position = Vector2(989, 665)
-scale = Vector2(5, 5)
-health = 11

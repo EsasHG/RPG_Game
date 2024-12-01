@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://buy5maarkr67f"]
+
+[ext_resource type="PackedScene" uid="uid://xfrjl41ip7vn" path="res://Scenes/bigEnemy.tscn" id="2_0uk52"]
+
+[node name="Encounter" type="Node2D"]
+
+[node name="BigEnemy" parent="." instance=ExtResource("2_0uk52")]
+position = Vector2(960, 350)
+scale = Vector2(10, 10)
+health = 100

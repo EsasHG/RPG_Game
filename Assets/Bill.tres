@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://bj38x2cbe6gga"]
+
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="1_xpbdw"]
+[ext_resource type="Resource" uid="uid://bju0l5qw7np4w" path="res://Assets/Attacks/HorizontalSlash.tres" id="2_4u0fa"]
+[ext_resource type="Resource" uid="uid://c81rb6h2i0uf3" path="res://Assets/Attacks/VerticalSlash.tres" id="3_5tjtp"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="4_37ls7"]
+
+[resource]
+script = ExtResource("4_37ls7")
+name = "Bill"
+max_health = 10
+current_health = 10
+attacks = Array[ExtResource("1_xpbdw")]([ExtResource("2_4u0fa"), ExtResource("3_5tjtp")])
